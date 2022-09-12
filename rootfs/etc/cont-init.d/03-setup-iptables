@@ -44,11 +44,6 @@ iptables --delete-chain
 iptables -t nat --flush
 iptables -t nat --delete-chain
 
-# Set default policies to drop all communication unless specifically allowed
-iptables -P INPUT DROP
-iptables -P OUTPUT DROP
-iptables -P FORWARD DROP
-
 # allow localhost traffic
 iptables -A INPUT -j ACCEPT -i lo
 iptables -A OUTPUT -j ACCEPT -o lo
